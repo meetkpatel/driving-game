@@ -13,21 +13,24 @@ body {
   position: absolute;
   height: 12rem;
   width: 12rem;
-  transition: 0.5s;
 }
 
 .rotate-east {
+  transition: 0.5s;
   transform: rotate(0deg);
 }
 
 .rotate-south {
+  transition: 0.5s;
   transform: rotate(90deg);
 }
 
 .rotate-west {
+  transition: 0.5s;
   transform: rotate(180deg);
 }
 
 .rotate-north {
+  transition: 0.5s;
   transform: rotate(270deg);
 }
