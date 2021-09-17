@@ -41,5 +41,4 @@ function carstarting() {
 function startCar() {
   coordination.x += 10;
   $car.style.left = coordination.x + 'px';
-
 }
