@@ -34,3 +34,19 @@ body {
   transition: 0.5s;
   transform: rotate(270deg);
 }
+
+.rotate-east-no-transition {
+  transform: rotate(0deg);
+}
+
+.rotate-south-no-transition {
+  transform: rotate(90deg);
+}
+
+.rotate-west-no-transition {
+  transform: rotate(180deg);
+}
+
+.rotate-north-no-transition {
+  transform: rotate(270deg);
+}

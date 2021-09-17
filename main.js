@@ -12,17 +12,33 @@ var audio = new Audio('audio/carstart.mp3');
 
 function spanElementsPress(event) {
   if (event.key === 'ArrowRight') {
-    $car.setAttribute('class', 'car rotate-east');
+    if (carStart === false) {
+      $car.setAttribute('class', 'car rotate-east');
+    } else {
+      $car.setAttribute('class', 'car rotate-east-no-transition');
+    }
     coordination.direction = 'east';
   } else if (event.key === 'ArrowDown') {
-    $car.setAttribute('class', 'car rotate-south');
+    if (carStart === false) {
+      $car.setAttribute('class', 'car rotate-south');
+    } else {
+      $car.setAttribute('class', 'car rotate-south-no-transition');
+    }
     coordination.direction = 'south';
   } else if (event.key === 'ArrowLeft') {
-    $car.setAttribute('class', 'car rotate-west');
+    if (carStart === false) {
+      $car.setAttribute('class', 'car rotate-west');
+    } else {
+      $car.setAttribute('class', 'car rotate-west-no-transition');
+    }
     coordination.direction = 'west';
   } else if (event.key === 'ArrowUp') {
-    $car.setAttribute('class', 'car rotate-north');
-    coordination.direction = 'east';
+    if (carStart === false) {
+      $car.setAttribute('class', 'car rotate-north');
+    } else {
+      $car.setAttribute('class', 'car rotate-north-no-transition');
+    }
+    coordination.direction = 'north';
   } else if (event.key === ' ') {
     if (carStart === false) {
       audio.play();
@@ -39,6 +55,17 @@ function carstarting() {
 }
 
 function startCar() {
-  coordination.x += 10;
-  $car.style.left = coordination.x + 'px';
+  if (coordination.direction === 'east') {
+    coordination.x += 10;
+    $car.style.left = coordination.x + 'px';
+  } else if (coordination.direction === 'west') {
+    coordination.x -= 10;
+    $car.style.left = coordination.x + 'px';
+  } else if (coordination.direction === 'south') {
+    coordination.y += 10;
+    $car.style.top = coordination.y + 'px';
+  } else if (coordination.direction === 'north') {
+    coordination.y -= 10;
+    $car.style.top = coordination.y + 'px';
+  }
 }
