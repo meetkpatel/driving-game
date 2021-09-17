@@ -10,7 +10,8 @@ body {
 }
 
 .car {
-  height: 12 rem;
+  position: absolute;
+  height: 12rem;
   width: 12rem;
   transition: 0.5s;
 }
